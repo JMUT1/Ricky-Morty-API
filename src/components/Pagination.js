@@ -1,26 +1,32 @@
-const Pagination = ({onPrevious, onNext})=>{
+const Pagination = ({ prev, next, onPrevious, onNext }) => {
+  const handlerPrevious = () => {
+    onPrevious();
+  };
 
-    const handlerPrevious =()=>{
+  const handlerNext = () => {
+    onNext();
+  };
 
-    };
-
-    const handlerNext = ()=>{
-
-    };
-
-
-    return(
-        <nav>
-            <ul className="pagination justify-content-center" >
-                <li className="page-item">
-                    <button className="page-link" onClick={}>Previous</button>
-                </li>
-                <li className="page-item">
-                    <button className="page-link" onClick={}>Next</button>
-                </li>
-            </ul>
-        </nav>
-    )
-}
+  return (
+    <nav className="my-5">
+      <ul className="pagination justify-content-center">
+        {prev ? (
+          <li className="page-item">
+            <button className="page-link" onClick={handlerPrevious}>
+              Previous
+            </button>
+          </li>
+        ) : null}
+        {next ? (
+          <li className="page-item">
+            <button className="page-link" onClick={handlerNext}>
+              Next
+            </button>
+          </li>
+        ) : null}
+      </ul>
+    </nav>
+  );
+};
 
 export default Pagination;
