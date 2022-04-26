@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
+import Character from "./components/Character";
 
 function App() {
-
   const [characters, setCharacters] = useState([]);
 
   const initialUrl = "https://rickandmortyapi.com/api/character";
@@ -18,8 +18,14 @@ function App() {
     fetchCharters(initialUrl);
   }, []);
 
-
-  return <Navbar brand="Ricky and Morty App" />;
+  return (
+    <>
+      <Navbar brand="Ricky and Morty App" />
+      <div className="container">
+    <Character characters={characters}/>
+      </div>
+    </>
+  );
 }
 
 export default App;
