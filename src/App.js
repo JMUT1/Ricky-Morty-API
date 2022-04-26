@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Character from "./components/Character";
+import Pagination from "./components/Pagination";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -22,6 +23,7 @@ function App() {
     <>
       <Navbar brand="Ricky and Morty App" />
       <div className="container mt-5">
+        <Pagination/>
         <Character characters={characters} />
       </div>
     </>
