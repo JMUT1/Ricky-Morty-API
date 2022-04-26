@@ -25,6 +25,7 @@ function App() {
       <div className="container mt-5">
         <Pagination/>
         <Character characters={characters} />
+        <Pagination/>
       </div>
     </>
   );
